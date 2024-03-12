@@ -27,7 +27,7 @@ public class Main {
         System.out.println("Welcome to our Java project!");
         Animal dog = new Dog();
         Animal cat = new Cat();
-        dog.makeSound(); // Output: Woof!
+        dog.makeSound();
         cat.makeSound(); // Output: Meow!
     }
 }
