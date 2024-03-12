@@ -28,6 +28,6 @@ public class Main {
         Animal dog = new Dog();
         Animal cat = new Cat();
         dog.makeSound();
-        cat.makeSound(); // Output: Meow!
+        cat.makeSound();
     }
 }
