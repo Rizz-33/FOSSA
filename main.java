@@ -16,3 +16,17 @@ public class Main {
         System.out.println("Result of calculation: " + result);
     }
 }
+
+// Utility.java (Utility class)
+package com.example.project.util;
+
+public class Utility {
+    public void doSomething() {
+        System.out.println("Utility class is doing something...");
+    }
+    
+    public int calculate(int a, int b) {
+        return a + b;
+    }
+}
+
