@@ -34,3 +34,12 @@ public class Utility {
         return a + b;
     }
 }
+// DataProcessor.java (DataProcessor class)
+package com.example.project.data;
+
+public class DataProcessor {
+    public String process(String data) {
+        return "Processed: " + data;
+    }
+}
+
