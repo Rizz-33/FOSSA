@@ -1,4 +1,4 @@
-// Animal.java (Interface)
+
 package com.example.project.animals;
 
 public interface Animal {
@@ -15,7 +15,6 @@ public class Dog implements Animal {
     }
 }
 
-// Cat.java (Cat class implementing the Animal interface)
 package com.example.project.animals;
 
 public class Cat implements Animal {
@@ -24,7 +23,7 @@ public class Cat implements Animal {
         System.out.println("Meow!");
     }
 }
-// Main.java (Main class)
+
 package com.example.project;
 
 import com.example.project.animals.Animal;
