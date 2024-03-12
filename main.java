@@ -12,7 +12,6 @@ public class Dog implements Animal {
     }
 }
 package com.example.project.animals;
-
 public class Cat implements Animal {
     @Override
     public void makeSound() {
