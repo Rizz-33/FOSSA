@@ -30,3 +30,13 @@ public class Utility {
     }
 }
 
+// MyClass.java (Another class)
+package com.example.project;
+
+public class MyClass {
+    public void displayMessage() {
+        System.out.println("This is a message from MyClass.");
+    }
+}
+
+
