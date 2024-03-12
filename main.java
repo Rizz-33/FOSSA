@@ -14,18 +14,23 @@ public class SimpleJavaProgram {
         System.out.println("Hello, " + name + "!");
 
         // Calculate the sum of digits in a number
-        System.out.print("Enter a number to calculate the sum of its digits: ");
+        System.out.print("Enter a positive integer to calculate the sum of its digits: ");
         int number = scanner.nextInt();
-        int sumOfDigits = 0;
-        int tempNumber = number;
-        while (tempNumber != 0) {
-            sumOfDigits += tempNumber % 10;
-            tempNumber /= 10;
+
+        if (number <= 0) {
+            System.out.println("Please enter a positive integer.");
+        } else {
+            int sumOfDigits = 0;
+            int tempNumber = number;
+            while (tempNumber != 0) {
+                sumOfDigits += tempNumber % 10;
+                tempNumber /= 10;
+            }
+            System.out.println("The sum of digits in " + number + " is: " + sumOfDigits);
         }
-        System.out.println("The sum of digits in " + number + " is: " + sumOfDigits);
 
         // Farewell message
-        System.out.println("Goodbye, " + name + "!");
+        System.out.println("Thank you for using My Simple Java Program, " + name + "!");
         scanner.close();
     }
 }
