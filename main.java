@@ -19,7 +19,6 @@ public class Cat implements Animal {
         System.out.println("Meow!");
     }
 }
-
 package com.example.project;
 
 import com.example.project.animals.Animal;
