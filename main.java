@@ -28,7 +28,7 @@ public class Main {
         Animal dog = new Dog();
         Animal cat = new Cat();
 
-        // Call makeSound() method
+
         dog.makeSound(); // Output: Woof!
         cat.makeSound(); // Output: Meow!
     }
