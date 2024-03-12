@@ -12,17 +12,25 @@ public class MyJavaFile {
         // Greet the user
         System.out.println("Hello, " + name + "!");
 
-        // Calculate the sum of digits in a number
-        System.out.print("Enter a number to calculate the sum of its digits: ");
-        int number = scanner.nextInt();
-        int sumOfDigits = sumOfDigits(number);
-        System.out.println("The sum of digits in " + number + " is: " + sumOfDigits);
+        // Ask the user for the number of numbers to process
+        System.out.print("How many numbers would you like to enter? ");
+        int count = scanner.nextInt();
 
-        // Check if the number is Armstrong
-        if (isArmstrong(number)) {
-            System.out.println(number + " is an Armstrong number.");
-        } else {
-            System.out.println(number + " is not an Armstrong number.");
+        // Process each number
+        for (int i = 1; i <= count; i++) {
+            System.out.print("Enter number " + i + ": ");
+            int number = scanner.nextInt();
+            int sumOfDigits = sumOfDigits(number);
+            boolean isArmstrong = isArmstrong(number);
+
+            // Display results
+            System.out.println("Number " + number + ":");
+            System.out.println("  - Sum of digits: " + sumOfDigits);
+            if (isArmstrong) {
+                System.out.println("  - Armstrong number: Yes");
+            } else {
+                System.out.println("  - Armstrong number: No");
+            }
         }
 
         // Farewell message
