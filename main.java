@@ -26,7 +26,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to our Java project!");
 
-        // Create instances of Dog and Cat
+
         Animal dog = new Dog();
         Animal cat = new Cat();
 
