@@ -19,6 +19,8 @@ public class MyJavaFile {
         System.out.println("2. Check if number is Armstrong");
         System.out.println("3. Calculate factorial");
         System.out.println("4. Check if number is palindrome");
+        System.out.println("5. Generate Fibonacci sequence");
+        System.out.println("6. Check if number is prime");
 
         // Get user's choice
         System.out.print("Enter your choice: ");
@@ -57,6 +59,26 @@ public class MyJavaFile {
                     System.out.println(number4 + " is a palindrome.");
                 } else {
                     System.out.println(number4 + " is not a palindrome.");
+                }
+                break;
+            case 5:
+                // Generate Fibonacci sequence
+                System.out.print("Enter the number of Fibonacci numbers to generate: ");
+                int count = scanner.nextInt();
+                System.out.println("The Fibonacci sequence:");
+                for (int i = 0; i < count; i++) {
+                    System.out.print(fibonacci(i) + " ");
+                }
+                System.out.println();
+                break;
+            case 6:
+                // Check if the number is prime
+                System.out.print("Enter a number to check if it's prime: ");
+                int number6 = scanner.nextInt();
+                if (isPrime(number6)) {
+                    System.out.println(number6 + " is a prime number.");
+                } else {
+                    System.out.println(number6 + " is not a prime number.");
                 }
                 break;
             default:
@@ -112,5 +134,32 @@ public class MyJavaFile {
             n /= 10;
         }
         return original == reversed;
+    }
+
+    // Method to calculate the Fibonacci number at a given index
+    private static int fibonacci(int n) {
+        if (n <= 1) {
+            return n;
+        }
+        int fib1 = 0, fib2 = 1, fib = 0;
+        for (int i = 2; i <= n; i++) {
+            fib = fib1 + fib2;
+            fib1 = fib2;
+            fib2 = fib;
+        }
+        return fib;
+    }
+
+    // Method to check if a number is prime
+    private static boolean isPrime(int n) {
+        if (n <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
