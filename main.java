@@ -12,45 +12,40 @@ public class MyJavaFile {
         // Greet the user
         System.out.println("Hello, " + name + "!");
 
-        // Calculate the factorial of a number
-        System.out.print("Enter a number to calculate its factorial: ");
-        int number = scanner.nextInt();
-        long factorial = calculateFactorial(number);
-        System.out.println("The factorial of " + number + " is: " + factorial);
-
-        // Check if the number is prime
-        if (isPrime(number)) {
-            System.out.println(number + " is a prime number.");
-        } else {
-            System.out.println(number + " is not a prime number.");
+        // Calculate the Fibonacci sequence
+        System.out.print("Enter the number of Fibonacci numbers to generate: ");
+        int count = scanner.nextInt();
+        System.out.println("The Fibonacci sequence:");
+        for (int i = 0; i < count; i++) {
+            System.out.print(fibonacci(i) + " ");
         }
+        System.out.println();
+
+        // Reverse a string
+        scanner.nextLine(); // Consume the newline character
+        System.out.print("Enter a string to reverse: ");
+        String inputString = scanner.nextLine();
+        String reversedString = reverseString(inputString);
+        System.out.println("Reversed string: " + reversedString);
 
         // Farewell message
         System.out.println("Goodbye, " + name + "!");
     }
 
-    // Method to calculate the factorial of a number
-    private static long calculateFactorial(int n) {
-        if (n == 0 || n == 1) {
-            return 1;
+    // Method to calculate the Fibonacci number at a given index
+    private static int fibonacci(int n) {
+        if (n <= 1) {
+            return n;
         }
-        long factorial = 1;
-        for (int i = 2; i <= n; i++) {
-            factorial *= i;
-        }
-        return factorial;
+        return fibonacci(n - 1) + fibonacci(n - 2);
     }
 
-    // Method to check if a number is prime
-    private static boolean isPrime(int n) {
-        if (n <= 1) {
-            return false;
+    // Method to reverse a string
+    private static String reverseString(String str) {
+        StringBuilder reversed = new StringBuilder();
+        for (int i = str.length() - 1; i >= 0; i--) {
+            reversed.append(str.charAt(i));
         }
-        for (int i = 2; i <= Math.sqrt(n); i++) {
-            if (n % i == 0) {
-                return false;
-            }
-        }
-        return true;
+        return reversed.toString();
     }
 }
