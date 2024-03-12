@@ -3,7 +3,6 @@ package com.example.project.animals;
 public interface Animal {
     void makeSound();
 }
-
 package com.example.project.animals;
 
 public class Dog implements Animal {
