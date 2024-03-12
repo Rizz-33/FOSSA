@@ -11,7 +11,6 @@ public class Dog implements Animal {
         System.out.println("Woof!");
     }
 }
-
 package com.example.project.animals;
 
 public class Cat implements Animal {
