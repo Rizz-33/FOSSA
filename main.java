@@ -9,3 +9,11 @@ public class Main {
         Utility.doSomething();
     }
 }
+// Utility.java (Utility class)
+package com.example.project.util;
+
+public class Utility {
+    public static void doSomething() {
+        System.out.println("Doing something...");
+    }
+}
