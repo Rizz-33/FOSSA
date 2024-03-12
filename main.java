@@ -20,7 +20,6 @@ public class Cat implements Animal {
     }
 }
 package com.example.project;
-
 import com.example.project.animals.Animal;
 import com.example.project.animals.Dog;
 import com.example.project.animals.Cat;
