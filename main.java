@@ -13,13 +13,22 @@ public class SimpleJavaProgram {
         // Greet the user
         System.out.println("Hello, " + name + "!");
 
-        // Calculate the sum of digits in a number
-        System.out.print("Enter a positive integer to calculate the sum of its digits: ");
-        int number = scanner.nextInt();
+        boolean repeat = true;
+        while (repeat) {
+            // Calculate the sum of digits in a number
+            System.out.print("Enter a positive integer to calculate the sum of its digits: ");
+            int number;
+            try {
+                number = Integer.parseInt(scanner.nextLine());
+                if (number <= 0) {
+                    System.out.println("Please enter a positive integer.");
+                    continue; // Repeat the loop
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a valid positive integer.");
+                continue; // Repeat the loop
+            }
 
-        if (number <= 0) {
-            System.out.println("Please enter a positive integer.");
-        } else {
             int sumOfDigits = 0;
             int tempNumber = number;
             while (tempNumber != 0) {
@@ -27,6 +36,11 @@ public class SimpleJavaProgram {
                 tempNumber /= 10;
             }
             System.out.println("The sum of digits in " + number + " is: " + sumOfDigits);
+
+            // Ask if the user wants to repeat the calculation
+            System.out.print("Do you want to calculate again? (yes/no): ");
+            String repeatChoice = scanner.nextLine().toLowerCase();
+            repeat = repeatChoice.equals("yes");
         }
 
         // Farewell message
