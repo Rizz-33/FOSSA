@@ -1,5 +1,3 @@
-// MyJavaFile.java
-
 import java.util.Scanner;
 
 public class MyJavaFile {
@@ -14,20 +12,45 @@ public class MyJavaFile {
         // Greet the user
         System.out.println("Hello, " + name + "!");
 
-        // Perform a simple calculation
-        int x = 5;
-        int y = 3;
-        int sum = x + y;
-        System.out.println("The sum of " + x + " and " + y + " is: " + sum);
+        // Calculate the factorial of a number
+        System.out.print("Enter a number to calculate its factorial: ");
+        int number = scanner.nextInt();
+        long factorial = calculateFactorial(number);
+        System.out.println("The factorial of " + number + " is: " + factorial);
 
-        // Display a message based on the sum
-        if (sum > 10) {
-            System.out.println("That's a big number!");
+        // Check if the number is prime
+        if (isPrime(number)) {
+            System.out.println(number + " is a prime number.");
         } else {
-            System.out.println("That's not a very big number.");
+            System.out.println(number + " is not a prime number.");
         }
 
         // Farewell message
         System.out.println("Goodbye, " + name + "!");
+    }
+
+    // Method to calculate the factorial of a number
+    private static long calculateFactorial(int n) {
+        if (n == 0 || n == 1) {
+            return 1;
+        }
+        long factorial = 1;
+        for (int i = 2; i <= n; i++) {
+            factorial *= i;
+        }
+        return factorial;
+    }
+
+    // Method to check if a number is prime
+    private static boolean isPrime(int n) {
+        if (n <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
