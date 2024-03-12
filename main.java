@@ -1,4 +1,3 @@
-
 package com.example.project.animals;
 
 public interface Animal {
