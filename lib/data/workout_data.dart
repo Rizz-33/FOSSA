@@ -25,7 +25,6 @@ class WorkoutData {
   }
 
   void addExercise(String workoutName, String exerciseName, String weight, String reps, String sets) {
-    Workout relevantWorkout = workoutList.firstWhere((workout) => workout.name == workoutName);
 
     relevantWorkout.exercises.add(
       Exercise(
@@ -38,6 +37,12 @@ class WorkoutData {
   }
 
   void checkOfExercise(String workoutName, String exerciseName) {
-    
+
+  }
+
+  Workout getRelevantWorkout(String workoutName) {
+    Workout relevantWorkout = workoutList.firstWhere((workout) => workout.name == workoutName);
+
+    return relevantWorkout;
   }
 }
