@@ -23,4 +23,16 @@ class WorkoutData {
   void addWorkout(String name) {
     workoutList.add(Workout(name: name, exercises: []));
   }
+
+  void addExercise(String workoutName, String exerciseName, String weight, String reps, String sets) {
+    Workout relevantWorkout = workoutList.firstWhere((workout) => workout.name == workoutName);
+
+    relevantWorkout.exercises.add(
+      Exercise(
+        name: exerciseName,
+        weight: weight,
+        reps: reps,
+        sets: sets
+      ));
+  }
 }
