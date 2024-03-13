@@ -1,7 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:fossa/models/exercise.dart';
 import 'package:fossa/models/workout.dart';
 
-class WorkoutData {
+class WorkoutData extends ChangeNotifier{
   List<Workout> workoutList = [
     Workout(
       name: 'Upper Body',
@@ -28,6 +29,8 @@ class WorkoutData {
 
   void addWorkout(String name) {
     workoutList.add(Workout(name: name, exercises: []));
+
+    notifyListeners();
   }
 
   void addExercise(String workoutName, String exerciseName, String weight, String reps, String sets) {
@@ -41,12 +44,16 @@ class WorkoutData {
         sets: sets
       )
     );
+
+    notifyListeners();
   }
 
   void checkOfExercise(String workoutName, String exerciseName) {
     Exercise relevantExercise = getRelevantExercise(workoutName, exerciseName);
 
     relevantExercise.isCompleted = !relevantExercise.isCompleted;
+
+    notifyListeners();
   }
 
   Workout getRelevantWorkout(String workoutName) {
