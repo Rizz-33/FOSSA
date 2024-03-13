@@ -20,6 +20,12 @@ class WorkoutData {
     return workoutList;
   }
 
+  int numberOfExerciseInWorkout(String workoutName) {
+    Workout relevantWorkout = getRelevantWorkout(workoutName);
+
+    return relevantWorkout.exercises.length;
+  }
+
   void addWorkout(String name) {
     workoutList.add(Workout(name: name, exercises: []));
   }
