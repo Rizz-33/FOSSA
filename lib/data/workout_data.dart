@@ -33,6 +33,11 @@ class WorkoutData {
         weight: weight,
         reps: reps,
         sets: sets
-      ));
+      )
+    );
+  }
+
+  void checkOfExercise(String workoutName, String exerciseName) {
+    
   }
 }
