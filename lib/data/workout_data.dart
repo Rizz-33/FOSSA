@@ -1,7 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:fossa/models/exercise.dart';
 import 'package:fossa/models/workout.dart';
 
-class WorkoutData {
+class WorkoutData extends ChangeNotifier{
   List<Workout> workoutList = [
     Workout(
       name: 'Upper Body',
@@ -20,11 +21,20 @@ class WorkoutData {
     return workoutList;
   }
 
+  int numberOfExerciseInWorkout(String workoutName) {
+    Workout relevantWorkout = getRelevantWorkout(workoutName);
+
+    return relevantWorkout.exercises.length;
+  }
+
   void addWorkout(String name) {
     workoutList.add(Workout(name: name, exercises: []));
+
+    notifyListeners();
   }
 
   void addExercise(String workoutName, String exerciseName, String weight, String reps, String sets) {
+    Workout relevantWorkout = getRelevantWorkout(workoutName);
 
     relevantWorkout.exercises.add(
       Exercise(
@@ -34,15 +44,29 @@ class WorkoutData {
         sets: sets
       )
     );
+
+    notifyListeners();
   }
 
   void checkOfExercise(String workoutName, String exerciseName) {
+    Exercise relevantExercise = getRelevantExercise(workoutName, exerciseName);
 
+    relevantExercise.isCompleted = !relevantExercise.isCompleted;
+
+    notifyListeners();
   }
 
   Workout getRelevantWorkout(String workoutName) {
     Workout relevantWorkout = workoutList.firstWhere((workout) => workout.name == workoutName);
 
     return relevantWorkout;
+  }
+
+  Exercise getRelevantExercise(String workoutName, String exerciseName) {
+    Workout relevantWorkout = getRelevantWorkout(workoutName);
+
+    Exercise relevantExercise = relevantWorkout.exercises.firstWhere((exercise) => exercise.name == exerciseName);
+
+    return relevantExercise;
   }
 }
