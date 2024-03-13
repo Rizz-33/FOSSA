@@ -19,4 +19,8 @@ class WorkoutData {
   List<Workout> getWorkoutList() {
     return workoutList;
   }
+
+  void addWorkout(String name) {
+    workoutList.add(Workout(name: name, exercises: []));
+  }
 }
