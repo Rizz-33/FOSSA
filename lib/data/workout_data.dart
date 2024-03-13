@@ -38,7 +38,9 @@ class WorkoutData {
   }
 
   void checkOfExercise(String workoutName, String exerciseName) {
+    Exercise relevantExercise = getRelevantExercise(workoutName, exerciseName);
 
+    relevantExercise.isCompleted = !relevantExercise.isCompleted;
   }
 
   Workout getRelevantWorkout(String workoutName) {
