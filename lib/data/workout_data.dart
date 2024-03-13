@@ -25,6 +25,7 @@ class WorkoutData {
   }
 
   void addExercise(String workoutName, String exerciseName, String weight, String reps, String sets) {
+    Workout relevantWorkout = getRelevantWorkout(workoutName);
 
     relevantWorkout.exercises.add(
       Exercise(
