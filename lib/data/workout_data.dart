@@ -15,4 +15,8 @@ class WorkoutData {
       ],
     )
   ];
+
+  List<Workout> getWorkoutList() {
+    return workoutList;
+  }
 }
