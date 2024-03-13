@@ -46,4 +46,12 @@ class WorkoutData {
 
     return relevantWorkout;
   }
+
+  Exercise getRelevantExercise(String workoutName, String exerciseName) {
+    Workout relevantWorkout = getRelevantWorkout(workoutName);
+
+    Exercise relevantExercise = relevantWorkout.exercises.firstWhere((exercise) => exercise.name == exerciseName);
+
+    return relevantExercise;
+  }
 }
