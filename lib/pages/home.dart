@@ -36,6 +36,10 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  void goToWorkoutPage(){
+    
+  }
+
   void save() {
     String newWorkoutName = newWorkoutNameController.text;
     Provider.of<WorkoutData>(context, listen: false).addWorkout(newWorkoutName);
@@ -78,6 +82,10 @@ class _HomePageState extends State<HomePage> {
           itemCount: value.getWorkoutList().length,
           itemBuilder: (context, index) => ListTile(
             title: Text(value.getWorkoutList()[index].name),
+            trailing: IconButton(
+              onPressed: goToWorkoutPage,
+              icon: Icon(Icons.arrow_forward),
+            ),
           )),
       ),
     );
