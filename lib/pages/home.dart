@@ -41,11 +41,17 @@ class _HomePageState extends State<HomePage> {
     Provider.of<WorkoutData>(context, listen: false).addWorkout(newWorkoutName);
 
     Navigator.pop(context);
+    clear();
   }
 
   void cancel() {
 
   }
+
+  void clear() {
+    newWorkoutNameController.clear();
+  }
+
 
   @override
   Widget build(BuildContext context) {
