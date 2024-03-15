@@ -11,6 +11,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  void createNewWorkout(){
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Consumer<WorkoutData>(
@@ -25,6 +30,9 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: createNewWorkout,
         ),
         body: ListView.builder(
           itemCount: value.getWorkoutList().length,
