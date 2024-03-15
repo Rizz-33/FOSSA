@@ -32,7 +32,9 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         floatingActionButton: FloatingActionButton(
+          backgroundColor: Color.fromARGB(255, 222, 19, 5),
           onPressed: createNewWorkout,
+          child: Icon(Icons.add, color: Colors.white,),
         ),
         body: ListView.builder(
           itemCount: value.getWorkoutList().length,
