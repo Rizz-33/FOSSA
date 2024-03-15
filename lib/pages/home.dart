@@ -45,7 +45,8 @@ class _HomePageState extends State<HomePage> {
   }
 
   void cancel() {
-
+    Navigator.pop(context);
+    clear();
   }
 
   void clear() {
