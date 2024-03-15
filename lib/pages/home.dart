@@ -26,6 +26,11 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
+        body: ListView.builder(
+          itemCount: value.getWorkoutList().length,
+          itemBuilder: (context, index) => ListTile(
+            title: Text(value.getWorkoutList()[index].name),
+          )),
       ),
     );
   }
