@@ -37,7 +37,10 @@ class _HomePageState extends State<HomePage> {
   }
 
   void save() {
+    String newWorkoutName = newWorkoutNameController.text;
+    Provider.of<WorkoutData>(context, listen: false).addWorkout(newWorkoutName);
 
+    Navigator.pop(context);
   }
 
   void cancel() {
