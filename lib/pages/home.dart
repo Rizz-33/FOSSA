@@ -37,8 +37,8 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  void goToWorkoutPage(){
-    Navigator.push(context, MaterialPageRoute(builder: (context) => WorkoutPage()));
+  void goToWorkoutPage(String workoutName){
+    Navigator.push(context, MaterialPageRoute(builder: (context) => WorkoutPage(workoutName: workoutName,)));
   }
 
   void save() {
