@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class WorkoutPage extends StatefulWidget {
-  const WorkoutPage({super.key});
+  final String workoutName;
+  const WorkoutPage({super.key, required this.workoutName});
 
   @override
   State<WorkoutPage> createState() => _WorkoutPageState();
@@ -10,6 +11,8 @@ class WorkoutPage extends StatefulWidget {
 class _WorkoutPageState extends State<WorkoutPage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(title: Text(widget.workoutName),),
+    );
   }
 }
