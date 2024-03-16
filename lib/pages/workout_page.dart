@@ -16,6 +16,12 @@ class _WorkoutPageState extends State<WorkoutPage> {
     return Consumer<WorkoutData>(
       builder: (context, value, child) => Scaffold(
       appBar: AppBar(title: Text(widget.workoutName),),
+      body: ListView.builder(
+        itemCount: value.numberOfExerciseInWorkout(widget.workoutName),
+        itemBuilder: (context, index) => ListTile(
+          title: Text(value.getRelevantWorkout(widget.workoutName).exercises[index].name),
+        )
+      ),
     ));
   }
 }
